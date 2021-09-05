@@ -12,7 +12,7 @@ Product.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false, 
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -27,23 +27,23 @@ Product.init(
         isDecimal: true,
       },
     },
-    stock : {
+    stock: {
       type: DataTypes.INTEGER,
-      allowNull: false, 
+      allowNull: false,
       defaultValue: 10,
       validate: {
         isNumeric: true,
       },
     },
-    cateogory_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
-      model: "category",
-        key: "id",
+        model: 'category',
+        key: 'id',
         unique: true,
+      },
     },
   },
-},
   {
     sequelize,
     timestamps: false,
